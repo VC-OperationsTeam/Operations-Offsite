@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.6",
+    "dotenv": "^18.0.5"
+  }
+}
