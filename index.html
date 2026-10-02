@@ -111,10 +111,10 @@ h2{font-size:clamp(30px,3.6vw,44px);color:var(--blue);font-weight:600;letter-spa
 .no-js .chev{display:none}
 .no-js .details{grid-template-rows:1fr}
 .tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
-.tab{font:inherit;text-align:left;cursor:pointer;background:var(--shade);border:1.5px solid transparent;border-radius:14px;padding:16px 18px;color:var(--ink);transition:all .2s ease}
+.tab{font:inherit;min-width:0;text-align:left;cursor:pointer;background:var(--shade);border:1.5px solid transparent;border-radius:14px;padding:16px 18px;color:var(--ink);transition:all .2s ease}
 .tab:hover{border-color:rgba(0,47,167,.25)}
 .tab:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
-.tab .t{display:block;font-size:17px;font-weight:600;color:var(--blue);line-height:1.35}
+.tab .t{display:block;font-size:17px;font-weight:600;color:var(--blue);line-height:1.35;overflow-wrap:break-word}
 .tab[aria-selected="true"]{background:var(--blue);border-color:var(--blue)}
 .tab[aria-selected="true"] .t{color:var(--white)}
 .day-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px 20px;padding-bottom:14px;border-bottom:2px solid var(--blue)}
@@ -177,10 +177,12 @@ footer p{font-size:14px;line-height:1.6;text-align:right}
   .compass{width:min(250px,64vw)}
   .coords{margin-top:8px;font-size:12px}
   .topbar{padding:20px 0 6px}
-  .tabs{grid-template-columns:1fr}
+  .tabs{grid-template-columns:minmax(0,1fr);gap:10px}
   .tlist li{grid-template-columns:44px 1fr;padding:16px 4px}
   .ctas .btn{width:100%;justify-content:center}
-  .tab .t{display:none}
+  .btn-soon{margin-top:6px;margin-bottom:32px}
+  .tab{width:100%;padding:14px 16px}
+  .tab .t{display:block;font-size:clamp(15px,4.1vw,17px);line-height:1.3;text-wrap:balance}
   .row{grid-template-columns:96px 1fr;gap:10px}
   .row .time{font-size:12.5px;padding-left:8px}
   .details ul{padding-right:10px}
@@ -193,6 +195,8 @@ footer p{font-size:14px;line-height:1.6;text-align:right}
   .hero>.topbar{padding:22px 18px 6px}
   .tag{display:none}
   .scroll-cue{display:none}
+  .btn{white-space:normal;text-align:center}
+  .btn-soon .soon{white-space:nowrap}
   .row{grid-template-columns:1fr;gap:0}
   .row .time{padding:14px 0 0 10px}
   .row.break .body,.sess{padding-left:10px}
@@ -299,7 +303,6 @@ footer p{font-size:14px;line-height:1.6;text-align:right}
       <ol class="tlist"><li>Business-Driven IT Governance</li><li>Operational Innovation and AI</li><li>Local Operations Update and 2027 Goals</li><li>Team-Building Activity</li></ol>
     </section>
     <section class="day-panel" id="day3" role="tabpanel" aria-labelledby="tab3" hidden>
-      <div class="day-head"><div><p>Standardization, Commitment &amp; Execution</p></div></div>
       <ol class="tlist"><li>Operational Process Standardization and Excellence</li><li>Local Operations Update and 2027 Goals</li><li>2027 Priorities, Cross-Country Dependencies and Action Plan</li></ol>
     </section>
     <p class="foot-note">The detailed agenda with times and speakers will be shared soon.</p>
