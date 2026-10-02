@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build:email": "node build-email-eml.js"
+  },
   "dependencies": {
     "@sendgrid/mail": "^8.1.6",
     "dotenv": "^18.0.5"

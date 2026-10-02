@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vinci Compass//Operations Offsite 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Vinci Compass First Operations Offsite
+BEGIN:VEVENT
+UID:operations-offsite-20261110@vc-operationsteam.github.io
+DTSTAMP:20261002T000000Z
+DTSTART:20261110T113000Z
+DTEND:20261110T203000Z
+SUMMARY:Vinci Compass First Operations Offsite
+DESCRIPTION:Daily session 08:30-17:30 (Rio time).\nDetails: https://vc-oper
+ ationsteam.github.io/Operations-Offsite/
+LOCATION:Av. Bartolomeu Mitre\, 336\, Edifício BM 336\, Leblon\, Rio de
+  Janeiro
+URL:https://vc-operationsteam.github.io/Operations-Offsite/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:operations-offsite-20261111@vc-operationsteam.github.io
+DTSTAMP:20261002T000000Z
+DTSTART:20261111T113000Z
+DTEND:20261111T203000Z
+SUMMARY:Vinci Compass First Operations Offsite
+DESCRIPTION:Daily session 08:30-17:30 (Rio time).\nDetails: https://vc-oper
+ ationsteam.github.io/Operations-Offsite/
+LOCATION:Av. Bartolomeu Mitre\, 336\, Edifício BM 336\, Leblon\, Rio de
+  Janeiro
+URL:https://vc-operationsteam.github.io/Operations-Offsite/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:operations-offsite-20261112@vc-operationsteam.github.io
+DTSTAMP:20261002T000000Z
+DTSTART:20261112T113000Z
+DTEND:20261112T203000Z
+SUMMARY:Vinci Compass First Operations Offsite
+DESCRIPTION:Daily session 08:30-17:30 (Rio time).\nDetails: https://vc-oper
+ ationsteam.github.io/Operations-Offsite/
+LOCATION:Av. Bartolomeu Mitre\, 336\, Edifício BM 336\, Leblon\, Rio de
+  Janeiro
+URL:https://vc-operationsteam.github.io/Operations-Offsite/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
