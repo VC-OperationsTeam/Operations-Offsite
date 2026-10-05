@@ -78,8 +78,14 @@ h1 .light{font-weight:300;display:block;opacity:.9}
   100%{transform:rotate(var(--bearing))}
 }
 .needle-idle{transform-origin:200px 200px}
-.settled .needle-idle{animation:breathe 6s ease-in-out infinite}
-@keyframes breathe{0%,100%{transform:rotate(0)}50%{transform:rotate(1.6deg)}}
+.settled .needle-idle{animation:seek-loop 8s ease-in-out infinite}
+@keyframes seek-loop{
+  0%,100%{transform:rotate(0)}
+  18%{transform:rotate(-10deg)}
+  40%{transform:rotate(14deg)}
+  61%{transform:rotate(-6deg)}
+  82%{transform:rotate(8deg)}
+}
 .pulse{transform-origin:200px 200px;opacity:0}
 .settled .pulse{animation:pulse 2.6s ease-out infinite}
 @keyframes pulse{0%{transform:scale(.2);opacity:.6}100%{transform:scale(1.15);opacity:0}}
@@ -105,15 +111,12 @@ h2{font-size:clamp(30px,3.6vw,44px);color:var(--blue);font-weight:600;letter-spa
 .no-js .chev{display:none}
 .no-js .details{grid-template-rows:1fr}
 .tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
-.tab{font:inherit;text-align:left;cursor:pointer;background:var(--shade);border:1.5px solid transparent;border-radius:14px;padding:16px 18px;color:var(--ink);transition:all .2s ease}
+.tab{font:inherit;min-width:0;text-align:left;cursor:pointer;background:var(--shade);border:1.5px solid transparent;border-radius:14px;padding:16px 18px;color:var(--ink);transition:all .2s ease}
 .tab:hover{border-color:rgba(0,47,167,.25)}
 .tab:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
-.tab .d{font-family:"Fira Mono",monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.tab .w{display:block;font-size:19px;font-weight:600;color:var(--blue);margin-top:4px}
-.tab .t{display:block;font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.35}
+.tab .t{display:block;font-size:17px;font-weight:600;color:var(--blue);line-height:1.35;overflow-wrap:break-word}
 .tab[aria-selected="true"]{background:var(--blue);border-color:var(--blue)}
-.tab[aria-selected="true"] .d,.tab[aria-selected="true"] .t{color:rgba(255,255,255,.75)}
-.tab[aria-selected="true"] .w{color:var(--white)}
+.tab[aria-selected="true"] .t{color:var(--white)}
 .day-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px 20px;padding-bottom:14px;border-bottom:2px solid var(--blue)}
 .day-head h3{font-size:22px;color:var(--blue);font-weight:600}
 .day-head p{color:var(--blue-mid);font-size:16px}
@@ -174,10 +177,12 @@ footer p{font-size:14px;line-height:1.6;text-align:right}
   .compass{width:min(250px,64vw)}
   .coords{margin-top:8px;font-size:12px}
   .topbar{padding:20px 0 6px}
-  .tabs{grid-template-columns:1fr}
+  .tabs{grid-template-columns:minmax(0,1fr);gap:10px}
   .tlist li{grid-template-columns:44px 1fr;padding:16px 4px}
   .ctas .btn{width:100%;justify-content:center}
-  .tab .t{display:none}
+  .btn-soon{margin-top:6px;margin-bottom:32px}
+  .tab{width:100%;padding:14px 16px}
+  .tab .t{display:block;font-size:clamp(15px,4.1vw,17px);line-height:1.3;text-wrap:balance}
   .row{grid-template-columns:96px 1fr;gap:10px}
   .row .time{font-size:12.5px;padding-left:8px}
   .details ul{padding-right:10px}
@@ -190,6 +195,8 @@ footer p{font-size:14px;line-height:1.6;text-align:right}
   .hero>.topbar{padding:22px 18px 6px}
   .tag{display:none}
   .scroll-cue{display:none}
+  .btn{white-space:normal;text-align:center}
+  .btn-soon .soon{white-space:nowrap}
   .row{grid-template-columns:1fr;gap:0}
   .row .time{padding:14px 0 0 10px}
   .row.break .body,.sess{padding-left:10px}
@@ -232,7 +239,7 @@ footer p{font-size:14px;line-height:1.6;text-align:right}
         <span class="fact"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Av. Bartolomeu Mitre, 336, Edifício BM 336, Leblon, Rio de Janeiro</span>
       </div>
       <div class="ctas">
-        <a class="btn btn-primary" id="calBtn" href="https://outlook.office.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&subject=Vinci%20Compass%20First%20Operations%20Offsite&startdt=2026-11-10T08%3A30%3A00-03%3A00&enddt=2026-11-12T17%3A30%3A00-03%3A00&location=Av.%20Bartolomeu%20Mitre%2C%20336%2C%20Edif%C3%ADcio%20BM%20336%2C%20Leblon%2C%20Rio%20de%20Janeiro&body=Vinci%20Compass%20First%20Operations%20Offsite%20%E2%80%94%20Rio%20de%20Janeiro%2C%20November%2010%E2%80%9312%2C%202026.%0ADaily%20sessions%20from%2008%3A30%20to%2017%3A30%20%28Rio%20time%29%2C%20followed%20by%20group%20dinners%20in%20the%20evening." target="_blank" rel="noopener">
+        <a class="btn btn-primary" id="calBtn" href="./operations-offsite-2026.ics" download="Vinci-Compass-Operations-Offsite-2026.ics">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M12 13v5M9.5 15.5h5"/></svg>
           Add to my Outlook calendar
         </a>
@@ -284,8 +291,20 @@ footer p{font-size:14px;line-height:1.6;text-align:right}
         <p class="sec-sub">What we will cover each day.</p>
       </div>
     </div>
-    <div class="tabs" role="tablist" id="tabs"><button class="tab" role="tab" id="tab1" aria-controls="day1" aria-selected="true"><span class="d">Day 1</span><span class="w">Tuesday, November 10</span><span class="t">Strategic Alignment &amp; Control Framework</span></button><button class="tab" role="tab" id="tab2" aria-controls="day2" aria-selected="false"><span class="d">Day 2</span><span class="w">Wednesday, November 11</span><span class="t">Technology, Innovation &amp; Local Execution</span></button><button class="tab" role="tab" id="tab3" aria-controls="day3" aria-selected="false"><span class="d">Day 3</span><span class="w">Thursday, November 12</span><span class="t">Standardization, Commitment &amp; Execution</span></button></div>
-    <section class="day-panel" id="day1" role="tabpanel" aria-labelledby="tab1"><div class="day-head"><div><h3>Day 1 · Tuesday, November 10, 2026</h3><p>Strategic Alignment &amp; Control Framework</p></div></div><ol class="tlist"><li>Welcome and Offsite Objectives</li><li>Business Update and Strategy</li><li>Global Operations Update: KPIs and Medium-/Long-Term Objectives</li><li>Firm Technology Strategy</li><li>SOX Implementation Update</li><li>Minimum Controls for External Administrators Workshop</li><li>Day-One Discussion and Key Takeaways</li></ol></section><section class="day-panel" id="day2" role="tabpanel" aria-labelledby="tab2" hidden><div class="day-head"><div><h3>Day 2 · Wednesday, November 11, 2026</h3><p>Technology, Innovation &amp; Local Execution</p></div></div><ol class="tlist"><li>Day-One Recap</li><li>Business-Driven IT Governance</li><li>Operational Innovation and AI</li><li>Local Operations Update and 2026 Goals: Chile</li><li>Local Operations Update and 2027 Goals: Brazil</li><li>Team-Building Activity</li></ol></section><section class="day-panel" id="day3" role="tabpanel" aria-labelledby="tab3" hidden><div class="day-head"><div><h3>Day 3 · Thursday, November 12, 2026</h3><p>Standardization, Commitment &amp; Execution</p></div></div><ol class="tlist"><li>Day-Two Recap</li><li>Operational Process Standardization and Excellence</li><li>Local Operations Update and 2027 Goals: Mexico</li><li>Local Operations Update and 2027 Goals: United States</li><li>Local Operations Update and 2027 Goals: Argentina</li><li>2027 Priorities, Cross-Country Dependencies and Action Plan</li><li>Closing Session</li><li>Final Reflections</li></ol></section>
+    <div class="tabs" role="tablist" id="tabs">
+      <button class="tab" role="tab" id="tab1" aria-controls="day1" aria-selected="true"><span class="t">Strategic Alignment &amp; Control Framework</span></button>
+      <button class="tab" role="tab" id="tab2" aria-controls="day2" aria-selected="false"><span class="t">Technology, Innovation &amp; Local Execution</span></button>
+      <button class="tab" role="tab" id="tab3" aria-controls="day3" aria-selected="false"><span class="t">Standardization, Commitment &amp; Execution</span></button>
+    </div>
+    <section class="day-panel" id="day1" role="tabpanel" aria-labelledby="tab1">
+      <ol class="tlist"><li>Business Update and Strategy</li><li>Global Operations Update: KPIs and Medium-/Long-Term Objectives</li><li>Firm Technology Strategy</li><li>SOX Implementation Update</li><li>Minimum Controls for External Administrators Workshop</li></ol>
+    </section>
+    <section class="day-panel" id="day2" role="tabpanel" aria-labelledby="tab2" hidden>
+      <ol class="tlist"><li>Business-Driven IT Governance</li><li>Operational Innovation and AI</li><li>Local Operations Update and 2026 Goals</li><li>Team-Building Activity</li></ol>
+    </section>
+    <section class="day-panel" id="day3" role="tabpanel" aria-labelledby="tab3" hidden>
+      <ol class="tlist"><li>Operational Process Standardization and Excellence</li><li>Local Operations Update and 2027 Goals</li><li>2027 Priorities, Cross-Country Dependencies and Action Plan</li></ol>
+    </section>
     <p class="foot-note">The detailed agenda with times and speakers will be shared soon.</p>
   </div>
 </main>
@@ -298,16 +317,6 @@ footer p{font-size:14px;line-height:1.6;text-align:right}
 </footer>
 
 <script>
-
-/* ---------- calendar: add the agenda link to the Outlook event body ---------- */
-(function(){
-  const a = document.getElementById('calBtn');
-  if (location.protocol.startsWith('http')) {
-    const u = new URL(a.href);
-    u.searchParams.set('body', u.searchParams.get('body') + '\n\nDetails: ' + location.origin + location.pathname);
-    a.href = u.toString();
-  }
-})();
 
 /* ---------- topic tabs ---------- */
 (function(){
