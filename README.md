@@ -5,7 +5,7 @@ Invitation page and email for the First Operations Offsite (Rio de Janeiro, Nove
 Published with GitHub Pages at https://vc-operationsteam.github.io/Operations-Offsite/
 
 ## Page
-- `index.html`: landing page with the compass animation, the "Add to my Outlook calendar" button, the topics per day and the full agenda (times, speakers and session details).
+- `index.html`: landing page with the compass animation, the "Add to my Outlook calendar" button and the full agenda by day (times, speakers and session details).
 - `Vinci-Compass-Operations-Offsite-Agenda.pdf`: downloadable agenda (v1), linked from the Agenda section.
 - `operations-offsite-2026.ics`: three Outlook-compatible appointments, one for each offsite day from 08:30 to 17:30 (Rio time).
 - `og-image.png`: preview image shown when the link is shared (Teams, WhatsApp…).
