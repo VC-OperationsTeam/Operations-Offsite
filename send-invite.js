@@ -32,7 +32,6 @@ const mensajes = invitados.map((invitado) => ({
   attachments: [
     img('invitation.gif', 'image/gif', 'invitation'),
     img('btn-calendar.png', 'image/png', 'btn-calendar'),
-    img('btn-topics.png', 'image/png', 'btn-topics'),
   ],
 }));
 

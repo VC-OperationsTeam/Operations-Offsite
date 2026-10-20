@@ -152,25 +152,6 @@ h2{font-size:clamp(30px,3.6vw,44px);color:var(--blue);font-weight:600;letter-spa
 .details .prep{font-style:italic;color:var(--muted);font-size:14px;margin-top:8px}
 .foot-note{margin-top:22px;font-size:13.5px;color:var(--muted)}
 
-/* ---------- TOPICS ---------- */
-.topics{padding:96px 0 80px;background:var(--white)}
-.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.day-card{background:var(--shade);border:1px solid #DCE3F3;border-radius:16px;padding:26px 24px 22px;animation:rowin .5s ease both}
-.day-card:nth-child(2){animation-delay:.08s}.day-card:nth-child(3){animation-delay:.16s}
-.day-card .d{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
-.day-card .date{display:block;font-size:28px;font-weight:600;color:var(--blue);margin-top:6px;line-height:1.1}
-.day-card .wd{display:block;font-size:14.5px;color:var(--muted);margin-top:2px}
-.day-card .theme{margin-top:16px;padding-top:14px;border-top:1px solid #DCE3F3;font-size:15px;font-weight:600;color:var(--blue-mid);line-height:1.4}
-.day-card ol{list-style:none;margin-top:14px;counter-reset:t}
-.day-card li{counter-increment:t;position:relative;padding:10px 0 10px 34px;border-top:1px solid #E6EBF6;font-size:15px;line-height:1.4;color:var(--ink)}
-.day-card li:first-child{border-top:none}
-.day-card li::before{content:counter(t,decimal-leading-zero);position:absolute;left:0;top:11px;font-family:"Fira Mono",monospace;font-size:12px;color:var(--cyan);font-weight:500}
-
-.tlist{list-style:none;counter-reset:t;margin-top:6px}
-.tlist li{counter-increment:t;display:grid;grid-template-columns:64px 1fr;align-items:baseline;gap:8px;padding:22px 8px 22px 4px;border-bottom:1px solid var(--line);font-size:clamp(19px,2vw,24px);font-weight:500;line-height:1.3;color:var(--blue);animation:rowin .45s ease both}
-.tlist li::before{content:counter(t,decimal-leading-zero);font-family:"Fira Mono",monospace;font-size:15px;font-weight:500;color:var(--cyan);letter-spacing:.05em}
-.tlist li:hover{background:var(--shade)}
-
 /* ---------- FOOTER ---------- */
 footer{background:var(--blue);color:rgba(255,255,255,.85);padding:40px 0;position:relative;overflow:hidden}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
@@ -184,7 +165,6 @@ footer p{font-size:14px;line-height:1.6;text-align:right}
   .coords{margin-top:8px;font-size:12px}
   .topbar{padding:20px 0 6px}
   .tabs{grid-template-columns:minmax(0,1fr);gap:10px}
-  .tlist li{grid-template-columns:44px 1fr;padding:16px 4px}
   .ctas .btn{width:100%;justify-content:center}
   .btn-soon{margin-top:6px;margin-bottom:32px}
   .tab{width:100%;padding:14px 16px}
